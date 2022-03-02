@@ -1,23 +1,21 @@
-/* Computes the dimensional weight of a 12 11 x 10 11 x a II box */
+/* Adds two fractions */
+#include <stdio.h> // the program in order to run should include this to access the C's standard library
 
-#include <stdio.h> /*including the <stdio.h> to call the C's standard library to make the program perform input and output operations*/
+int main(void){ //including the main function since it will be automatically called when the program is executed
+    int num1, denom1, num2, denom2, result_num, result_denom;  // declaring some variables in integer type
+    printf("Enter first fraction: ");  // printing a message to serve as a guide to ask the user to input the first fraction
+    scanf("%d/ %d", &num1, &denom1);  // the program will ask the user to input values for the fraction
+                                     // the %d tells the program that it will print an integer and the format will be for example, x/y
 
-int main (void) /*the main function is automatically called when the code is running*/
-{
-int height, length, width, volume, weight; //declaring the variables that needs to be used in the program
-height = 8;  // each variables will have a values through assignments
-length= 12;
-width= 10;
-volume = height* length* width; // this is the formula to get the volume
-                                // the variables are used and assigned to another variable named volume
-weight= (volume+ 165) / 166;  // the formula for weight
-                                // the value that we get from the variable volume is used to get the weight by adding 165 to it and dividing to 166
+    printf("Enter second fraction: "); // printing a message to serve as a guide to ask the user to input the second fraction
+    scanf ("%d/%d", &num2, &denom2); // the program will ask the user to input values for the fraction
+                                    // the %d tells the program that it will print an integer and the format will be for example, a/b
 
 
-printf("Dimensions: %dx%dx%d\n", length, width, height);  //%dx and %d will tell the printf that it will print an integer
-                                                            //the values of length, width and height will be assigned to the Dimension value
-printf("Volume (cubic inches): %d\n", volume); // the value of the volume will be assigned to te Volume /cubic inches/
-printf ( "Dimensional weight (pounds) : %d\n", weight) ;  // the value of the weight will be in the Dimensional weight
-                                                        // this will serve as a guide for better understanding in the numbers given
-return 0; /*the return 0 is required by the main function for the program to perform accordingly*/
+    result_num = num1 * denom2 + num2 * denom1;  // the variables num1 and denom2 will be multiplied together and will be added to the product of num2 and denom1
+                                                // and it will be stored to another variable, called result_num
+    result_denom = denom1 * denom2;  // the product of denom1 and denom2 will be stored to variable result_denom
+    printf ( "The sum is %d/%d\n", result_num, result_denom);  // the program will print a message and will show the values or the sum of both fractions,
+                                                                // result_num is the numerator and result_denom is the denominator
+    return 0;  // return 0 is for the program's termination, it means that it is already done
 }
