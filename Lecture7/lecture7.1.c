@@ -3,7 +3,7 @@
 #define N_REVIEWERS 3
 #define N_MOVIES 4
 
-int maint(){
+int main(){
 
     double sum_per_reviewer, ave_per_reviewer;
 
@@ -13,11 +13,11 @@ int maint(){
         {6, 9, 3 ,7}
     };
 
-    for (reviewer = 0 ; reviewer < N_REVIEWERS ; reviewer++){
+    for (int reviewer = 0 ; reviewer < N_REVIEWERS ; reviewer++){
         printf("Reviewer%d : ", reviewer+1);
         sum_per_reviewer = 0;
 
-        for (movie = 0 ; movie < N_MOVIES ; movie++){
+        for (int movie = 0 ; movie < N_MOVIES ; movie++){
             printf("%.0f ", ratings[reviewer][movie]);
             sum_per_reviewer += ratings[reviewer][movie];
         }
