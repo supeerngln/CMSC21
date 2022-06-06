@@ -25,7 +25,7 @@ int main() //main porogram
 {
     struct point a; //naming the structure point as a
     struct line solv; //naming the structure line as solv
-    float dist, slp, inForm;  //declaring variables
+    float dist, slp, inForm, slope;  //declaring variables
 
     //getting input from the user for line 1 and point 1
     printf("Enter x coordinate of starting point: ");
@@ -52,8 +52,9 @@ int main() //main porogram
         solv.in.x, solv.out.x, solv.in.y, solv.out.y, dist);
 
     inForm = solveInterceptForm(solv); //storing a function to a variable
+    slope = solveSlope(solv); // calling function to display in the equation
     printf("\nINTERCEPT FORM: %.2f = %.2f + %.2f\n",  //printing values of the slope intercept form
-           solv.in.y, inForm);
+           solv.in.y, slope, inForm);
 
     return 0; //program termination or end of the main program
 }
@@ -89,8 +90,6 @@ float solveDistance(struct line solv)
 //function to get the Slope Intercept Form of the line
 float solveInterceptForm(struct line solv)
 {
-    float m = ((((solv.out.y - solv.in.y) / (solv.out.x - solv.in.x)) * solv.in.x) + (solv.in.y - (m * solv.in.x))); //getting the slope intercept
-
-    return m;
+    float b = (solv.in.y - (((solv.out.y - solv.in.y) / (solv.out.x - solv.in.x)) * (solv.in.x))); // solving for b
+    return  b;
 }
-
